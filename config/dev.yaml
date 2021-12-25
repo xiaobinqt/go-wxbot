@@ -1,0 +1,9 @@
+app:
+  env: dev
+
+keys:
+  bot_name:  # 机器人名称
+  # .....
+
+
+

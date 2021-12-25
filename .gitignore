@@ -1,0 +1,17 @@
+*.log
+.vscode
+.DS_Store
+.idea
+
+
+config/prod.yaml
+avatar/test.png
+comm/funcs/cc.txt
+avatar/*.png
+avatar/*.jpeg
+avatar/*.gif
+
+
+
+
+
