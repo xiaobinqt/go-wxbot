@@ -63,7 +63,7 @@ func FansTicker() {
 					pp = fmt.Sprintf(`星期%s快乐，如果今天你得了福报要加班的话，不要忘记签到哦~`,
 						weekdayCn(int(t.Weekday())))
 				}
-				prefix := fmt.Sprintf("\n%s新的一天从一碗毒鸡汤开始：", pp)
+				prefix := fmt.Sprintf("%s\n新的一天从一碗毒鸡汤开始：", pp)
 				SendMessageToFans(prefix, tian.C_dujitang)
 			}
 		}
