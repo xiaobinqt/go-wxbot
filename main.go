@@ -81,19 +81,6 @@ func main() {
 		logrus.Fatalf("wx self get groups err: %s ", err.Error())
 	}
 
-	//members, err := global.WxGroups.SearchByNickName(1, "琅琊山五壮士")[0].Members()
-	//if err != nil {
-	//	fmt.Println("get members err", err.Error())
-	//} else {
-	//	for index, each := range members {
-	//		err = each.SaveAvatar(fmt.Sprintf("%d.png", index))
-	//		if err != nil {
-	//			fmt.Println("save err", err.Error())
-	//		}
-	//		time.Sleep(2 * time.Second)
-	//	}
-	//}
-
 	ticker.Ticker()
 
 	// 阻塞主goroutine, 直到发生异常或者用户主动退出

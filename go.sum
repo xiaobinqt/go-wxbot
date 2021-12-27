@@ -1,8 +1,8 @@
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
-github.com/eatmoreapple/openwechat v1.1.6-0.20211225165315-1bdcfa296c16 h1:Oqd7IWxTQ+b0oou6Qzv6bv9LFXVvnfVmYg6i2umVR4k=
-github.com/eatmoreapple/openwechat v1.1.6-0.20211225165315-1bdcfa296c16/go.mod h1:61HOzTyvLobGdgWhL68jfGNwTJEv0mhQ1miCXQrvWU8=
+github.com/eatmoreapple/openwechat v1.1.7-0.20211226154417-7ce0f2a21c9e h1:nkhAO+1Ieq3bPmgeVl6qw8VZ3gpyt47djFNotPCaWcg=
+github.com/eatmoreapple/openwechat v1.1.7-0.20211226154417-7ce0f2a21c9e/go.mod h1:61HOzTyvLobGdgWhL68jfGNwTJEv0mhQ1miCXQrvWU8=
 github.com/google/gofuzz v1.0.0/go.mod h1:dBl0BpW6vV/+mYPU4Po3pmUjxk6FQPldtuIdl/M65Eg=
 github.com/json-iterator/go v1.1.12 h1:PV8peI4a0ysnczrg+LtxykD8LfKY9ML6u2jnxaEnrnM=
 github.com/json-iterator/go v1.1.12/go.mod h1:e30LSqwooZae/UwlEbR2852Gd8hjQvJoHmT4TnhNGBo=
