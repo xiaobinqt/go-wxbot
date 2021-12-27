@@ -100,7 +100,8 @@ func handleChristmasHatMsg(msg *openwechat.Message) {
 	if err != nil {
 		err = errors.Wrapf(err, "SaveAvatar err:%s", sender.NickName)
 		logrus.Error(err.Error())
-		msg.ReplyText(fmt.Sprintf("%s处理不过来了，过会儿再来生成圣诞帽吧！", global.Conf.Keys.BotName))
+		msg.ReplyText(fmt.Sprintf("%s获取%s的头像失败了，你的头像可能是被小马哥加密了哦！！",
+			global.Conf.Keys.BotName, sender.NickName))
 		return
 	}
 
