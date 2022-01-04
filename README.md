@@ -1,5 +1,7 @@
 # golang 微信机器人
 
+## 阵亡了，2021-12-31 微信关闭了 uos 微信登录，绕过网页版登录限制已经不再生效。
+
 基于 [openwechat](https://github.com/eatmoreapple/openwechat) 开发，感谢作者。
 
 ## 功能列表
