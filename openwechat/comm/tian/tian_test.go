@@ -6,8 +6,8 @@ import (
 
 	"github.com/json-iterator/go/extra"
 	"github.com/sirupsen/logrus"
-	conf2 "go-wxbot/comm/conf"
-	"go-wxbot/comm/global"
+	conf2 "go-wxbot/openwechat/comm/conf"
+	"go-wxbot/openwechat/comm/global"
 )
 
 func initAction(t *testing.T) (conf *conf2.Conf) {

@@ -4,9 +4,9 @@
 .idea
 
 
-config/prod.yaml
-avatar/test.png
-comm/funcs/cc.txt
+openwechat/config/prod.yaml
+openwechat/avatar/test.png
+openwechat/comm/funcs/cc.txt
 avatar/*.png
 avatar/*.jpeg
 avatar/*.gif

@@ -2,7 +2,7 @@ package global
 
 import (
 	"github.com/eatmoreapple/openwechat"
-	"go-wxbot/comm/conf"
+	"go-wxbot/openwechat/comm/conf"
 )
 
 var (

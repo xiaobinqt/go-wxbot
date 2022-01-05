@@ -8,8 +8,8 @@ import (
 	jsoniter "github.com/json-iterator/go"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
-	"go-wxbot/comm/global"
-	"go-wxbot/comm/web"
+	"go-wxbot/openwechat/comm/global"
+	"go-wxbot/openwechat/comm/web"
 )
 
 func GetMessage(stype string, word ...string) (message string, err error) {

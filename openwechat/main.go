@@ -9,10 +9,10 @@ import (
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 	qrcode "github.com/skip2/go-qrcode"
-	conf2 "go-wxbot/comm/conf"
-	"go-wxbot/comm/global"
-	msg2 "go-wxbot/comm/msg"
-	"go-wxbot/comm/ticker"
+	conf2 "go-wxbot/openwechat/comm/conf"
+	"go-wxbot/openwechat/comm/global"
+	msg2 "go-wxbot/openwechat/comm/msg"
+	"go-wxbot/openwechat/comm/ticker"
 )
 
 var (

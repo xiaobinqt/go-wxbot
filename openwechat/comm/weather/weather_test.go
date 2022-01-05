@@ -1,13 +1,13 @@
-package funcs
+package weather
 
 import (
 	"fmt"
+	"os"
 	"testing"
 
 	"github.com/json-iterator/go/extra"
 	"github.com/sirupsen/logrus"
-	conf2 "go-wxbot/comm/conf"
-	"go-wxbot/comm/global"
+	conf2 "go-wxbot/openwechat/comm/conf"
 )
 
 func initAction(t *testing.T) (conf *conf2.Conf) {
@@ -22,17 +22,12 @@ func initAction(t *testing.T) (conf *conf2.Conf) {
 		return
 	}
 
-	global.Conf = conf
-
 	return conf
 }
 
-func TestImg2base64(t *testing.T) {
-	ret, err := Img2base64("D:\\go\\src\\go-wxbot\\avatar\\test.png")
-	if err != nil {
-		fmt.Println(err.Error())
-		return
-	}
-
-	fmt.Println(ret)
+func TestGetWeatherInfo(t *testing.T) {
+	conf := initAction(t)
+	os.Chdir("../../")
+	format, err := GetFormatWeatherMessage(conf, "泾县")
+	fmt.Println(format, err)
 }

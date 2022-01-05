@@ -7,8 +7,8 @@ import (
 	"github.com/eatmoreapple/openwechat"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
-	"go-wxbot/comm/global"
-	"go-wxbot/comm/tian"
+	"go-wxbot/openwechat/comm/global"
+	"go-wxbot/openwechat/comm/tian"
 )
 
 // 后厂村吴彦祖粉丝团

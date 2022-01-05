@@ -1,4 +1,4 @@
-module go-wxbot
+module go-wxbot/openwechat
 
 go 1.16
 

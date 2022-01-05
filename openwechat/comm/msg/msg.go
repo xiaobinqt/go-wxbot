@@ -18,11 +18,11 @@ import (
 	jsoniter "github.com/json-iterator/go"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
-	"go-wxbot/comm/funcs"
-	"go-wxbot/comm/global"
-	"go-wxbot/comm/tian"
-	"go-wxbot/comm/weather"
-	"go-wxbot/comm/web"
+	"go-wxbot/openwechat/comm/funcs"
+	"go-wxbot/openwechat/comm/global"
+	"go-wxbot/openwechat/comm/tian"
+	"go-wxbot/openwechat/comm/weather"
+	"go-wxbot/openwechat/comm/web"
 )
 
 func HandleMsg(msg *openwechat.Message) {

@@ -6,8 +6,8 @@ import (
 
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
-	"go-wxbot/comm/global"
-	"go-wxbot/comm/tian"
+	"go-wxbot/openwechat/comm/global"
+	"go-wxbot/openwechat/comm/tian"
 )
 
 func SendMessageToLover(prefix, stype string) {

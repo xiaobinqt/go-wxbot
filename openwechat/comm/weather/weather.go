@@ -8,9 +8,9 @@ import (
 	jsoniter "github.com/json-iterator/go"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
-	adcode2 "go-wxbot/comm/adcode"
-	"go-wxbot/comm/global"
-	"go-wxbot/comm/web"
+	adcode2 "go-wxbot/openwechat/comm/adcode"
+	"go-wxbot/openwechat/comm/global"
+	"go-wxbot/openwechat/comm/web"
 )
 
 // https://restapi.amap.com/v3/weather/weatherInfo?city=110101&key=<用户key>
