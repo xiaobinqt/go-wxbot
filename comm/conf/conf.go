@@ -28,6 +28,7 @@ type Keys struct {
 	HoneyLove       string `json:"honey_love" yaml:"honey_love"`
 	HouchangcunFans string `json:"houchangcun_fans" yaml:"houchangcun_fans"`
 	BanzhuanGroup   string `json:"banzhuan_group" yaml:"banzhuan_group"`
+	BubeiGroup      string `json:"bubei_group" yaml:"bubei_group"`
 }
 
 // GetConf .

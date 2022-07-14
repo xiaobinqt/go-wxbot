@@ -2,6 +2,7 @@ package ticker
 
 import (
 	"fmt"
+	"strings"
 	"time"
 
 	"github.com/eatmoreapple/openwechat"
@@ -65,6 +66,31 @@ func FansTicker() {
 				}
 				prefix := fmt.Sprintf("%s\n新的一天从一碗毒鸡汤开始：", pp)
 				SendMessageToFans(prefix, tian.C_dujitang)
+			}
+		}
+	}
+}
+
+// 不背单词打卡群
+func BubeiGroupTicker() {
+	for {
+		select {
+		case t := <-time.After(5 * time.Second):
+			nowTime := t.Format("15:04")
+			if nowTime == "22:30" {
+				// 获取群列表
+				groups, err := global.WxSelf.Groups(true)
+				if err != nil {
+					err = errors.Wrapf(err, "BubeiGroupTicker get groups err")
+					logrus.Error(err.Error())
+					continue
+				}
+				// 搜索群
+				for _, group := range groups {
+					if strings.Contains(group.NickName, global.Conf.Keys.BubeiGroup) {
+						group.SendText("22:30 了，没打卡的小伙伴，赶紧去打卡吧！")
+					}
+				}
 			}
 		}
 	}
