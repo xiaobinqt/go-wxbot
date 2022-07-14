@@ -73,22 +73,35 @@ func FansTicker() {
 
 // 不背单词打卡群
 func BubeiGroupTicker() {
+	// 计算时间是是否在打开时间段内
+	startDate, err := time.ParseInLocation("2006-01-02", global.Conf.Keys.BubeiStartDate, time.Local)
+	if err != nil {
+		err = errors.Wrapf(err, "BubeiGroupTicker parse start date err")
+		logrus.Error(err.Error())
+		return
+	}
+
+	endDate := startDate.AddDate(0, 0, 14)
+	fmt.Println("BubeiGroupTicker false or true", time.Now().After(startDate), time.Now().Before(endDate))
+
 	for {
 		select {
 		case t := <-time.After(5 * time.Second):
-			nowTime := t.Format("15:04")
-			if nowTime == "22:30" {
-				// 获取群列表
-				groups, err := global.WxSelf.Groups(true)
-				if err != nil {
-					err = errors.Wrapf(err, "BubeiGroupTicker get groups err")
-					logrus.Error(err.Error())
-					continue
-				}
-				// 搜索群
-				for _, group := range groups {
-					if strings.Contains(group.NickName, global.Conf.Keys.BubeiGroup) {
-						group.SendText("22:30 了，没打卡的小伙伴，赶紧去打卡吧！")
+			if time.Now().After(startDate) && time.Now().Before(endDate) {
+				nowTime := t.Format("15:04")
+				if nowTime == "22:30" {
+					// 获取群列表
+					groups, err := global.WxSelf.Groups(true)
+					if err != nil {
+						err = errors.Wrapf(err, "BubeiGroupTicker get groups err")
+						logrus.Error(err.Error())
+						continue
+					}
+					// 搜索群
+					for _, group := range groups {
+						if strings.Contains(group.NickName, global.Conf.Keys.BubeiGroup) {
+							group.SendText("22:30 了，没打卡的小伙伴，赶紧去打卡吧！")
+						}
 					}
 				}
 			}
