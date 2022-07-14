@@ -29,6 +29,7 @@ type Keys struct {
 	HouchangcunFans string `json:"houchangcun_fans" yaml:"houchangcun_fans"`
 	BanzhuanGroup   string `json:"banzhuan_group" yaml:"banzhuan_group"`
 	BubeiGroup      string `json:"bubei_group" yaml:"bubei_group"`
+	QweatherKey     string `json:"qweather_key" yaml:"qweather_key"`
 }
 
 // GetConf .

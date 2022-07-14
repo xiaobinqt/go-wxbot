@@ -20,8 +20,8 @@ import (
 	"github.com/sirupsen/logrus"
 	"go-wxbot/openwechat/comm/funcs"
 	"go-wxbot/openwechat/comm/global"
+	"go-wxbot/openwechat/comm/qweather"
 	"go-wxbot/openwechat/comm/tian"
-	"go-wxbot/openwechat/comm/weather"
 	"go-wxbot/openwechat/comm/web"
 )
 
@@ -364,15 +364,23 @@ func handleCookbookMsg(txt string) (cookbook string) {
 
 func handleWeatherMsg(txt string) (formatWeatherMsg string) {
 	var (
-		err error
+		err    error
+		cityID string
 	)
 	originTxt := txt
 	txt = strings.ReplaceAll(txt, "天气", "")
-	formatWeatherMsg, err = weather.GetFormatWeatherMessage(txt)
+	cityID, err = qweather.GetLocationID(txt)
 	if err != nil {
 		err = errors.Wrapf(err, "handleWeatherMsg GetFormatWeatherMessage err")
 		logrus.Error(err.Error())
-		return fmt.Sprintf("未查询到%s，请检查城市输入是否正确，当前只支持到区/县一级的城市查询，如：泾县天气，新市区天气。", originTxt)
+		return fmt.Sprintf("(1)未查询到%s，请检查城市输入是否正确，当前只支持到区/县一级的城市查询，如：泾县天气，新市区天气。", originTxt)
+	}
+
+	formatWeatherMsg, err = qweather.GetQWeatherDetail(cityID, txt)
+	if err != nil {
+		err = errors.Wrapf(err, "handleWeatherMsg GetFormatWeatherMessage err")
+		logrus.Error(err.Error())
+		return fmt.Sprintf("(2)未查询到%s，请检查城市输入是否正确，当前只支持到区/县一级的城市查询，如：泾县天气，新市区天气。", originTxt)
 	}
 
 	return formatWeatherMsg

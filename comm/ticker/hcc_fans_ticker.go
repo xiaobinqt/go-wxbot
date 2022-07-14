@@ -54,7 +54,7 @@ func SendMessageToFans(prefix, stype string) {
 func FansTicker() {
 	for {
 		select {
-		case t := <-time.After(1 * time.Minute):
+		case t := <-time.After(5 * time.Second):
 			nowTime := t.Format("15:04")
 			if nowTime == "09:30" {
 				pp := ""
