@@ -54,7 +54,7 @@ func SendMessageToFans(prefix, stype string) {
 func FansTicker() {
 	for {
 		select {
-		case t := <-time.After(5 * time.Second):
+		case t := <-time.After(1 * time.Minute):
 			nowTime := t.Format("15:04")
 			if nowTime == "09:30" {
 				pp := ""
@@ -86,7 +86,7 @@ func BubeiGroupTicker() {
 
 	for {
 		select {
-		case t := <-time.After(5 * time.Second):
+		case t := <-time.After(1 * time.Minute):
 			if time.Now().After(startDate) && time.Now().Before(endDate) {
 				nowTime := t.Format("15:04")
 				if nowTime == "22:30" {

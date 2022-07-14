@@ -33,7 +33,7 @@ func SendMessageToLover(prefix, stype string) {
 func LoveTicker() {
 	for {
 		select {
-		case t := <-time.After(5 * time.Second):
+		case t := <-time.After(1 * time.Minute):
 			nowTime := t.Format("15:04")
 			if nowTime == "09:30" {
 				SendMessageToLover("亲爱的，早上好！爱你每一天！\n新的一天从一句土味情话开始：", tian.C_saylove)
