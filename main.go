@@ -37,7 +37,7 @@ func main() {
 		logrus.Fatalf(err.Error())
 	}
 
-	bot := openwechat.DefaultBot()
+	bot := openwechat.DefaultBot(openwechat.Desktop)
 	//bot := openwechat.DefaultBot(openwechat.Normal) // 桌面模式，上面登录不上的可以尝试切换这种模式
 
 	// 注册消息处理函数

@@ -3,7 +3,7 @@ module go-wxbot/openwechat
 go 1.16
 
 require (
-	github.com/eatmoreapple/openwechat v1.1.8
+	github.com/eatmoreapple/openwechat v1.1.11
 	github.com/json-iterator/go v1.1.12
 	github.com/pkg/errors v0.9.1
 	github.com/sirupsen/logrus v1.8.1
