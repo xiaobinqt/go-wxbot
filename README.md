@@ -6,7 +6,10 @@
 
 ## 部署说明
 
-clone 项目到本地，然后进入项目目录，将 `config/dev.yaml` 文件改成 `config/prod.yaml`，执行如下命令：
+clone 项目到本地，然后进入项目目录，将 `config/dev.yaml` 文件改成 `config/prod.yaml`，
+yaml 配置文件需要配置下，可以去对应的网站获取 apiKey。
+
+执行如下命令：
 
 ```shell
 go mod tidy # 下载依赖
