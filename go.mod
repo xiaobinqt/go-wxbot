@@ -11,4 +11,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
 )
 
-//replace github.com/eatmoreapple/openwechat v1.1.5 => D:\go\src\openwechat
+//replace github.com/eatmoreapple/openwechat v1.1.11 => D:\go\src\openwechat
