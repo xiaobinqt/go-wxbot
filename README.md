@@ -4,6 +4,20 @@
 
 基于 [openwechat](https://github.com/eatmoreapple/openwechat) 开发，感谢作者。
 
+## 部署说明
+
+clone 项目到本地，然后进入项目目录，将 `config/dev.yaml` 文件改成 `config/prod.yaml`，执行如下命令：
+
+```shell
+go mod tidy # 下载依赖
+
+go build -v -o wxbot  # 编译
+
+nohup ./wxbot > core.log & # 后台运行, 可以查看日志 core.log
+```
+
+`less core.log` 可以查看日志，日志里有二维码，可以扫码登录。
+
 ## 功能列表
 
 ### 定时给女朋友推消息
