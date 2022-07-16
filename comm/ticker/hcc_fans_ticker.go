@@ -60,12 +60,14 @@ func FansTicker() {
 				pp := ""
 				if t.Weekday() >= 1 && t.Weekday() <= 5 {
 					pp = fmt.Sprintf(`星期%s快乐，不要忘记上班签到哦~`, weekdayCn(int(t.Weekday())))
-				} else {
-					pp = fmt.Sprintf(`星期%s快乐，如果今天你得了福报要加班的话，不要忘记签到哦~`,
-						weekdayCn(int(t.Weekday())))
+					prefix := fmt.Sprintf("%s\n新的一天从一碗毒鸡汤开始：", pp)
+					SendMessageToFans(prefix, tian.C_dujitang)
 				}
-				prefix := fmt.Sprintf("%s\n新的一天从一碗毒鸡汤开始：", pp)
-				SendMessageToFans(prefix, tian.C_dujitang)
+
+				//else { // 关闭周末提醒，毕竟大家要睡觉,哈哈哈
+				//	pp = fmt.Sprintf(`星期%s快乐，如果今天你得了福报要加班的话，不要忘记签到哦~`,
+				//		weekdayCn(int(t.Weekday())))
+				//}
 			}
 		}
 	}

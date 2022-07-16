@@ -20,6 +20,7 @@ import (
 	"github.com/sirupsen/logrus"
 	"go-wxbot/openwechat/comm/funcs"
 	"go-wxbot/openwechat/comm/global"
+	"go-wxbot/openwechat/comm/image"
 	"go-wxbot/openwechat/comm/qweather"
 	"go-wxbot/openwechat/comm/tian"
 	"go-wxbot/openwechat/comm/web"
@@ -37,7 +38,7 @@ func HandleMsg(msg *openwechat.Message) {
 
 	if msg.IsText() { // 处理文本消息
 		contentText = trimMsgContent(msg.Content)
-		if contentText != "打赏" && contentText != "圣诞帽" {
+		if contentText != "打赏" && contentText != "圣诞帽" && contentText != "程序员鼓励师" {
 			reply := contextTextBypass(contentText)
 			reply = strings.TrimLeft(reply, "\n")
 			reply = strings.TrimRight(reply, "\n")
@@ -73,8 +74,38 @@ func handleImageReply(msg *openwechat.Message, txt string) {
 
 	if txt == "圣诞帽" {
 		handleChristmasHatMsg(msg)
+		return
 	}
 
+	if txt == "程序员鼓励师" {
+		Encourage(msg)
+		return
+	}
+
+}
+
+func Encourage(msg *openwechat.Message) {
+	imgURL, err := image.GetImage()
+	if err != nil {
+		msg.ReplyText("鼓励师今天不在家，不要摸鱼，赶紧干活~")
+		return
+	}
+
+	savePath, err := image.SaveEncourageImg(imgURL)
+	if err != nil {
+		msg.ReplyText("鼓励师今天不在家，BUG 虽好，但不要贪多哦~")
+		return
+	}
+	defer os.Remove(savePath)
+
+	img, err := os.Open(savePath)
+	if err != nil {
+		msg.ReplyText("鼓励师今天不在家，么么哒~")
+		return
+	}
+	defer img.Close()
+
+	msg.ReplyImage(img)
 }
 
 func handleChristmasHatMsg(msg *openwechat.Message) {
@@ -136,13 +167,13 @@ func handleChristmasHatMsg(msg *openwechat.Message) {
 	// 发送加了圣诞帽的头像
 	avatarBase64Path := fmt.Sprintf("%s/avatar/%s", funcs.Wd(), filename)
 	img, err := os.Open(avatarBase64Path)
-	defer img.Close()
 	if err != nil {
 		err = errors.Wrapf(err, "avatarBase64Path open err:%s,path: %s", sender.NickName, avatarPath)
 		logrus.Error(err.Error())
 		msg.ReplyText(fmt.Sprintf("%s处理不过来了，过会儿再来生成圣诞帽吧！", global.Conf.Keys.BotName))
 		return
 	}
+	defer img.Close()
 
 	msg.ReplyImage(img)
 }
@@ -286,6 +317,7 @@ func contextTextBypass(txt string) (retMsg string) {
 天气查询，如：泾县天气。
 菜谱查询，如: 红烧肉菜谱，红烧肉做法。
 输入【打赏】打赏卫小兵。
+输入【程序员鼓励师】收到程序员鼓励师的回复。
 输入【毒鸡汤】关键字回复毒鸡汤。
 输入【圣诞帽】关键字回复简单处理后的圣诞帽头像，个别用户获取不到头像信息。
 输入【英语一句话】关键字回复一句学习英语。

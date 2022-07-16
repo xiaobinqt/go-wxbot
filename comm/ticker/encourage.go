@@ -14,7 +14,7 @@ import (
 
 // 程序员鼓励师
 
-func Encourage() {
+func EncourageTicker() {
 	for {
 		select {
 		case t := <-time.After(1 * time.Minute):
