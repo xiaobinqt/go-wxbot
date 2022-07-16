@@ -33,7 +33,7 @@ nohup ./wxbot > core.log & # 后台运行, 可以查看日志 core.log
 
 ### 根据关键字回复
 
-基于 [天行](https://www.tianapi.com/) api 和 [高德天气](https://lbs.amap.com/api/webservice/guide/api/weatherinfo/) 查询接口开发。
+基于 [天行](https://www.tianapi.com/) api 和 [和风天气](https://console.qweather.com/#/console?lang=zh) 查询接口开发。
 
 比如在群里发送【泾县天气】机器人会回复泾县今日的天气情况。
 
