@@ -46,13 +46,21 @@ func EncourageTicker() {
 				continue
 			}
 
-			img, err := os.Open(imgPath)
-			defer img.Close()
+			imgt1, err := os.Open(imgPath)
 			if err != nil {
-				err = errors.Wrapf(err, "reword open file err")
+				err = errors.Wrapf(err, "open img file err")
 				logrus.Error(err.Error())
 				continue
 			}
+			defer imgt1.Close()
+
+			imgt2, err := os.Open(imgPath)
+			if err != nil {
+				err = errors.Wrapf(err, "open img file err")
+				logrus.Error(err.Error())
+				continue
+			}
+			defer imgt2.Close()
 
 			groups, err = global.WxSelf.Groups(true)
 			if err != nil {
@@ -63,7 +71,7 @@ func EncourageTicker() {
 
 			// 后场村粉丝群
 			groups.SearchByNickName(1, global.Conf.Keys.HouchangcunFans).SendText(message)
-			groups.SearchByNickName(1, global.Conf.Keys.HouchangcunFans).SendImage(img)
+			groups.SearchByNickName(1, global.Conf.Keys.HouchangcunFans).SendImage(imgt1)
 
 			// 五壮士群
 			for _, each := range groups {
@@ -85,7 +93,7 @@ func EncourageTicker() {
 
 				if Is {
 					each.SendText(message)
-					each.SendImage(img)
+					each.SendImage(imgt2)
 				}
 			}
 

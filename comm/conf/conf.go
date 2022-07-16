@@ -31,6 +31,7 @@ type Keys struct {
 	BubeiGroup      string `json:"bubei_group" yaml:"bubei_group"`
 	QweatherKey     string `json:"qweather_key" yaml:"qweather_key"`
 	BubeiStartDate  string `json:"bubei_start_date" yaml:"bubei_start_date"`
+	BigMagicGroup   string `json:"big_magic_group" yaml:"big_magic_group"`
 }
 
 // GetConf .
