@@ -29,7 +29,7 @@ nohup ./wxbot > core.log & # 后台运行, 可以查看日志 core.log
 
 ### 定时给群推送消息
 
-[openwechat](https://github.com/eatmoreapple/openwechat) 现在只能通过群名获取群信息，每天定时给群推送上班打卡消息。
+**现在只能通过群名获取群信息**，每天定时给群推送上班打卡消息。
 
 ### 根据关键字回复
 
