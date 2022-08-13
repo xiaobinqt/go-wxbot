@@ -1,0 +1,42 @@
+package ticker
+
+import (
+	"time"
+
+	"github.com/pkg/errors"
+	"github.com/sirupsen/logrus"
+	"go-wxbot/openwechat/comm/global"
+)
+
+// 每天提醒自己一些事
+func MasterTicker() {
+	for {
+		select {
+		case t := <-time.After(1 * time.Minute):
+			nowTime := t.Format("15:04")
+			if nowTime == "23:00" {
+				message := "休息一下，整理一下今天的账单吧！记日记的时间也到了，不要忘记了哦！"
+				err := global.WxFriends.
+					SearchByRemarkName(1, global.Conf.Keys.MasterAccount).
+					SendText(message)
+				if err != nil {
+					err = errors.Wrapf(err, "SendMessageToMasterAccout err")
+					logrus.Error(err.Error())
+				}
+			}
+
+			if nowTime == "23:30" {
+				message := global.Conf.Keys.RemindMsg
+				logrus.Infof("send remind msg: %s", message)
+				err := global.WxFriends.
+					SearchByRemarkName(1, global.Conf.Keys.MasterAccount).
+					SendText(message)
+				if err != nil {
+					err = errors.Wrapf(err, "SendMessageToMasterAccout err")
+					logrus.Error(err.Error())
+				}
+			}
+
+		}
+	}
+}

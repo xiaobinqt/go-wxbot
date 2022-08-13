@@ -8,9 +8,12 @@ keys:
   tianapi_key: xxxx # 天行 api key
   qweather_key: xxx # 和风天气 api key
   honey_love: xxxxx
+  master_account: xxx
   houchangcun_fans: 后厂村吴彦祖粉丝团 # 粉丝群
   banzhuan_group: xxx  # 老翔头搬砖群
   bubei_group: 不背打卡小分队 # 不背单词打卡群
   bubei_start_date: 2100-07-15 # 不背单词打卡开始日期,一个周期是 14 天
+  wu_zhuang_shi_members: 李欢庭,邢宇超
+  remind_msg: xxxx
 
 

@@ -21,17 +21,20 @@ type App struct {
 }
 
 type Keys struct {
-	ChristmasHatURL string `json:"christmas_hat_url" yaml:"christmas_hat_url"`
-	BotName         string `json:"bot_name" yaml:"bot_name"`
-	WeatherKey      string `json:"weather_key" yaml:"weather_key"`
-	TianapiKey      string `json:"tianapi_key" yaml:"tianapi_key"`
-	HoneyLove       string `json:"honey_love" yaml:"honey_love"`
-	HouchangcunFans string `json:"houchangcun_fans" yaml:"houchangcun_fans"`
-	BanzhuanGroup   string `json:"banzhuan_group" yaml:"banzhuan_group"`
-	BubeiGroup      string `json:"bubei_group" yaml:"bubei_group"`
-	QweatherKey     string `json:"qweather_key" yaml:"qweather_key"`
-	BubeiStartDate  string `json:"bubei_start_date" yaml:"bubei_start_date"`
-	BigMagicGroup   string `json:"big_magic_group" yaml:"big_magic_group"`
+	ChristmasHatURL    string `json:"christmas_hat_url" yaml:"christmas_hat_url"`
+	BotName            string `json:"bot_name" yaml:"bot_name"`
+	WeatherKey         string `json:"weather_key" yaml:"weather_key"`
+	TianapiKey         string `json:"tianapi_key" yaml:"tianapi_key"`
+	HoneyLove          string `json:"honey_love" yaml:"honey_love"`
+	MasterAccount      string `json:"master_account" yaml:"master_account"`
+	HouchangcunFans    string `json:"houchangcun_fans" yaml:"houchangcun_fans"`
+	BanzhuanGroup      string `json:"banzhuan_group" yaml:"banzhuan_group"`
+	BubeiGroup         string `json:"bubei_group" yaml:"bubei_group"`
+	QweatherKey        string `json:"qweather_key" yaml:"qweather_key"`
+	BubeiStartDate     string `json:"bubei_start_date" yaml:"bubei_start_date"`
+	BigMagicGroup      string `json:"big_magic_group" yaml:"big_magic_group"`
+	WuZhuangShiMembers string `json:"wu_zhuang_shi_members" yaml:"wu_zhuang_shi_members"`
+	RemindMsg          string `json:"remind_msg" yaml:"remind_msg"`
 }
 
 // GetConf .

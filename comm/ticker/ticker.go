@@ -5,4 +5,5 @@ func Ticker() {
 	go FansTicker()
 	go BubeiGroupTicker()
 	go EncourageTicker()
+	go MasterTicker()
 }

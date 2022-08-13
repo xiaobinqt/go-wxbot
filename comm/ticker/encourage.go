@@ -3,6 +3,7 @@ package ticker
 import (
 	"fmt"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/eatmoreapple/openwechat"
@@ -85,7 +86,7 @@ func EncourageTicker() {
 				// 不能通过群备注来获取群，真是恶心
 				var Is = false
 				for _, member := range members {
-					if member.NickName == "李欢庭" || member.NickName == "邢宇超" {
+					if strings.Contains(global.Conf.Keys.WuZhuangShiMembers, member.NickName) {
 						Is = true
 						break
 					}
