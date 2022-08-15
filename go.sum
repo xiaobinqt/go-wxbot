@@ -1,3 +1,5 @@
+github.com/Lofanmi/chinese-calendar-golang v0.0.0-20211214151323-ef5cb443e55e h1:hWFKGrEqJI14SqwK7GShkaTV1NtQzMZFLFasITmH/LI=
+github.com/Lofanmi/chinese-calendar-golang v0.0.0-20211214151323-ef5cb443e55e/go.mod h1:nG6VxnU5//MJzjwFAYQzFcrVdm+3RGD8NwO9riziV8E=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=

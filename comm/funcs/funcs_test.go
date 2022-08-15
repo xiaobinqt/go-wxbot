@@ -3,6 +3,7 @@ package funcs
 import (
 	"fmt"
 	"testing"
+	"time"
 
 	"github.com/json-iterator/go/extra"
 	"github.com/sirupsen/logrus"
@@ -35,4 +36,27 @@ func TestImg2base64(t *testing.T) {
 	}
 
 	fmt.Println(ret)
+}
+
+func TestGetDiffDays(t *testing.T) {
+
+	x := GetDiffDaysSolar(getCurrentDate(), "08-22")
+	fmt.Println(x)
+}
+
+func TestGetqiXi(t *testing.T) {
+	x := getLunar2SolarDate(int64(time.Now().Year()), 7, 10)
+	fmt.Println("xxxxx1111", x)
+	xx := GetDiffDaysLunar(getCurrentDate(), x, 7, 10)
+	fmt.Println(xx)
+}
+
+func TestImportDateFormatMsg(t *testing.T) {
+	initAction(t)
+	x := ImportDateFormatMsg()
+	t.Log(x)
+}
+
+func TestRemainingDays(t *testing.T) {
+	t.Log(RemainingDays())
 }
