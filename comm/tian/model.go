@@ -17,5 +17,8 @@ type Info1 struct {
 		Yuanliao string `json:"yuanliao"`
 		En       string `json:"en"`
 		Zh       string `json:"zh"`
+		Saying   string `json:"saying"`
+		Transl   string `json:"transl"`
+		Source   string `json:"source"`
 	} `json:"newslist"`
 }

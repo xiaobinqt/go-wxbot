@@ -25,6 +25,7 @@ type Keys struct {
 	BotName            string `json:"bot_name" yaml:"bot_name"`
 	WeatherKey         string `json:"weather_key" yaml:"weather_key"`
 	TianapiKey         string `json:"tianapi_key" yaml:"tianapi_key"`
+	TianapiKey1        string `json:"tianapi_key1" yaml:"tianapi_key1"`
 	HoneyLove          string `json:"honey_love" yaml:"honey_love"`
 	LoverChName        string `json:"lover_ch_name" yaml:"lover_ch_name"`
 	MasterAccount      string `json:"master_account" yaml:"master_account"`

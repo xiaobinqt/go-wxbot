@@ -8,6 +8,7 @@ import (
 	"github.com/sirupsen/logrus"
 	"go-wxbot/openwechat/comm/funcs"
 	"go-wxbot/openwechat/comm/global"
+	"go-wxbot/openwechat/comm/tian"
 )
 
 // 每天提醒自己一些事
@@ -18,8 +19,15 @@ func MasterTicker() {
 			nowTime := t.Format("15:04")
 
 			if nowTime == "10:00" {
-				message := fmt.Sprintf("盛年不重来，一日难再晨。及时当勉励，岁月不待人。\n今年还剩 %d 天。", funcs.RemainingDays())
-				err := global.WxFriends.
+				lz, err := tian.GetMessageV1(tian.C_lizhiguyan)
+				message := ""
+				if err != nil {
+					message = fmt.Sprintf("盛年不重来，一日难再晨。及时当勉励，岁月不待人。\n今年还剩 %d 天。", funcs.RemainingDays())
+				} else {
+					message = fmt.Sprintf("%s\n今年还剩 %d 天。", lz, funcs.RemainingDays())
+				}
+
+				err = global.WxFriends.
 					SearchByRemarkName(1, global.Conf.Keys.MasterAccount).
 					SendText(message)
 				if err != nil {

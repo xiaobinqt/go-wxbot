@@ -40,8 +40,15 @@ func LoveTicker() {
 				SendMessageToLover("亲爱的，早上好！爱你每一天！\n新的一天从一句土味情话开始：", tian.C_saylove)
 			}
 			if nowTime == "10:00" {
-				message := fmt.Sprintf("盛年不重来，一日难再晨。及时当勉励，岁月不待人。\n今年还剩 %d 天。", funcs.RemainingDays())
-				err := global.WxFriends.
+				lz, err := tian.GetMessageV1(tian.C_lizhiguyan)
+				message := ""
+				if err != nil {
+					message = fmt.Sprintf("盛年不重来，一日难再晨。及时当勉励，岁月不待人。\n今年还剩 %d 天。", funcs.RemainingDays())
+				} else {
+					message = fmt.Sprintf("%s\n今年还剩 %d 天。", lz, funcs.RemainingDays())
+				}
+
+				err = global.WxFriends.
 					SearchByRemarkName(1, global.Conf.Keys.HoneyLove).
 					SendText(message)
 				if err != nil {

@@ -10,6 +10,7 @@ const (
 	C_saylove         = "saylove"    // 土味情话
 	C_caipu           = "caipu"      // 菜谱
 	C_englishSentence = "ensentence" // 英语一句话
+	C_lizhiguyan      = "lzmy"       // 励志古言
 )
 
 var (

@@ -40,3 +40,9 @@ func TestGetMessage(t *testing.T) {
 	ret, err = GetMessage(C_englishSentence)
 	fmt.Println(ret, err)
 }
+
+func TestGetMessageV1(t *testing.T) {
+	_ = initAction(t)
+	ret, err := GetMessageV1(C_lizhiguyan)
+	fmt.Println(ret, err)
+}
