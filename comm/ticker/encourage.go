@@ -71,8 +71,8 @@ func EncourageTicker() {
 			}
 
 			// 后场村粉丝群
-			groups.SearchByNickName(1, global.Conf.Keys.HouchangcunFans).SendText(message)
-			groups.SearchByNickName(1, global.Conf.Keys.HouchangcunFans).SendImage(imgt1)
+			//groups.SearchByNickName(1, global.Conf.Keys.HouchangcunFans).SendText(message)
+			//groups.SearchByNickName(1, global.Conf.Keys.HouchangcunFans).SendImage(imgt1)
 
 			// 五壮士群
 			for _, each := range groups {
