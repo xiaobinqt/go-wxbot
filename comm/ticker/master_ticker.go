@@ -24,7 +24,7 @@ func MasterTicker() {
 				if err != nil {
 					message = fmt.Sprintf("盛年不重来，一日难再晨。及时当勉励，岁月不待人。\n今年还剩 %d 天。", funcs.RemainingDays())
 				} else {
-					message = fmt.Sprintf("今年还剩 %d 天。\n\n%s", lz, funcs.RemainingDays())
+					message = fmt.Sprintf("今年还剩 %d 天。\n\n%s", funcs.RemainingDays(), lz)
 				}
 
 				err = global.WxFriends.

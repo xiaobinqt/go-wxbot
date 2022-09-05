@@ -45,7 +45,7 @@ func LoveTicker() {
 				if err != nil {
 					message = fmt.Sprintf("盛年不重来，一日难再晨。及时当勉励，岁月不待人。\n今年还剩 %d 天。", funcs.RemainingDays())
 				} else {
-					message = fmt.Sprintf("%s\n今年还剩 %d 天。", lz, funcs.RemainingDays())
+					message = fmt.Sprintf("%s\n\n今年还剩 %d 天。", lz, funcs.RemainingDays())
 				}
 
 				err = global.WxFriends.
