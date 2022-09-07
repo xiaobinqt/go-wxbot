@@ -85,6 +85,8 @@ func main() {
 
 	ticker.Ticker()
 
+	//Test()
+
 	// 阻塞主goroutine, 直到发生异常或者用户主动退出
 	bot.Block()
 }
