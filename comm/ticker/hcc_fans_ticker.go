@@ -2,7 +2,6 @@ package ticker
 
 import (
 	"fmt"
-	"strings"
 	"time"
 
 	"github.com/eatmoreapple/openwechat"
@@ -101,7 +100,7 @@ func BubeiGroupTicker() {
 					}
 					// 搜索群
 					for _, group := range groups {
-						if strings.Contains(group.NickName, global.Conf.Keys.BubeiGroup) {
+						if group.NickName == global.Conf.Keys.BubeiGroup {
 							group.SendText("22:30 了，没打卡的小伙伴，赶紧去打卡吧！")
 						}
 					}
