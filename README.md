@@ -4,7 +4,7 @@
 
 ## 演示
 
-![演示](https://cdn.xiaobinqt.cn/%E6%BC%94%E7%A4%BA.gif)
+[查看 gif 演示](https://cdn.xiaobinqt.cn/%E6%BC%94%E7%A4%BA.gif)
 
 ## 部署说明
 
