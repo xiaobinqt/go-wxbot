@@ -2,10 +2,13 @@
 
 基于 [openwechat](https://github.com/eatmoreapple/openwechat) 开发，感谢作者。
 
+## 演示
+
+![演示](https://cdn.xiaobinqt.cn/%E6%BC%94%E7%A4%BA.gif)
+
 ## 部署说明
 
-clone 项目到本地，然后进入项目目录，将 `config/dev.yaml` 文件改成 `config/prod.yaml`，
-yaml 配置文件需要配置下，可以去对应的网站获取 apiKey。
+clone 项目到本地，然后进入项目目录，将 `config/dev.yaml` 文件改成 `config/prod.yaml`， yaml 配置文件需要配置下，可以去对应的网站获取 apiKey。
 
 执行如下命令：
 
@@ -27,7 +30,9 @@ nohup ./wxbot > core.log & # 后台运行, 可以查看日志 core.log
 
 ### 定时给群推送消息
 
-**现在只能通过群名获取群信息**，每天定时给群推送上班打卡消息。
+**现在只能通过群名获取群信息**，每天定时给群推送上班打卡等消息，比如每天提醒吃饭，毕竟吃饭不积极，头脑有问题:cry:
+
+![提醒吃饭](https://cdn.xiaobinqt.cn/xiaobinqt.io/20221119/2896b9de50fd40c8bb08a636396fa104.jpg?imageView2/0/q/75|watermark/2/text/eGlhb2JpbnF0/font/dmlqYXlh/fontsize/1000/fill/IzVDNUI1Qg==/dissolve/52/gravity/SouthEast/dx/15/dy/15 '提醒吃饭')
 
 ### 根据关键字回复
 
