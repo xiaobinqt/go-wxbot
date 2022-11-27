@@ -90,7 +90,7 @@ func BubeiGroupTicker() {
 		case t := <-time.After(1 * time.Minute):
 			if time.Now().After(startDate) && time.Now().Before(endDate) {
 				nowTime := t.Format("15:04")
-				if nowTime == "22:30" {
+				if nowTime == "22:50" {
 					// 获取群列表
 					groups, err := global.WxSelf.Groups(true)
 					if err != nil {
@@ -101,7 +101,7 @@ func BubeiGroupTicker() {
 					// 搜索群
 					for _, group := range groups {
 						if group.NickName == global.Conf.Keys.BubeiGroup {
-							group.SendText("22:30 了，没打卡的小伙伴，赶紧去打卡吧！")
+							group.SendText("22:50 了，没打卡的小伙伴，赶紧去打卡吧！")
 						}
 					}
 				}
