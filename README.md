@@ -1,7 +1,5 @@
 # golang 微信机器人
 
-基于 [openwechat](https://github.com/eatmoreapple/openwechat) 开发，感谢作者。
-
 ## 功能演示
 
 [//]: # ([查看 gif 演示]&#40;https://cdn.xiaobinqt.cn/%E6%BC%94%E7%A4%BA.gif&#41;)
@@ -52,6 +50,8 @@ nohup ./wxbot > core.log & # 后台运行, 可以查看日志 core.log
 输入【英语一句话】关键字回复一句学习英语。
 ```
 
+## 感谢
 
+基于 [openwechat](https://github.com/eatmoreapple/openwechat) 开发，感谢作者。
 
 
