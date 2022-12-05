@@ -50,6 +50,10 @@ nohup ./wxbot > core.log & # 后台运行, 可以查看日志 core.log
 输入【英语一句话】关键字回复一句学习英语。
 ```
 
+## 联系方式
+
+![](https://cdn.xiaobinqt.cn/xiaobinqt.io/20220319/d5616bfc809a45608437f9cc94b14044.jpg?imageView2/0/interlace/1/q/50|imageslim)
+
 ## 感谢
 
 基于 [openwechat](https://github.com/eatmoreapple/openwechat) 开发，感谢作者。
