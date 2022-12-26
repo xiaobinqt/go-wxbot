@@ -22,6 +22,8 @@ nohup ./wxbot > core.log & # 后台运行, 可以查看日志 core.log
 
 `less core.log` 可以查看日志，日志里有二维码，可以扫码登录。
 
+> 本项目只是作者的一个玩具，基于[openwechat](https://github.com/eatmoreapple/openwechat) 开发，大部分功能只为个人定制，并不通用。
+
 ## 功能列表
 
 ### 定时给女朋友推消息
