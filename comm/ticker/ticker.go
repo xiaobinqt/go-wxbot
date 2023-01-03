@@ -6,4 +6,5 @@ func Ticker() {
 	go BubeiGroupTicker()
 	go EncourageTicker()
 	go MasterTicker()
+	go ScheduleNoticeTicker()
 }

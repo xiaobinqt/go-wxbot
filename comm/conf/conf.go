@@ -11,8 +11,15 @@ import (
 
 // Conf .
 type Conf struct {
-	App  App  `json:"app" yaml:"app"`
-	Keys Keys `json:"keys" yaml:"keys"`
+	App       App       `json:"app" yaml:"app"`
+	Keys      Keys      `json:"keys" yaml:"keys"`
+	RedisConf RedisConf `json:"redis" yaml:"redis"`
+}
+
+type RedisConf struct {
+	IP     string `json:"ip" yaml:"ip"`
+	Port   string `json:"port" yaml:"port"`
+	Passwd string `json:"passwd" yaml:"passwd"`
 }
 
 // App .

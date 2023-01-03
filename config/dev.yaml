@@ -18,4 +18,7 @@ keys:
   wu_zhuang_shi_members: xxx,xxx
   remind_msg: xxxx
 
-
+redis:
+  ip: 192.xxx.14.xx
+  port: 6379
+  passwd: xxxxx

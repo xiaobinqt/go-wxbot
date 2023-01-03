@@ -23,6 +23,7 @@ import (
 	"go-wxbot/openwechat/comm/image"
 	"go-wxbot/openwechat/comm/qweather"
 	"go-wxbot/openwechat/comm/tian"
+	"go-wxbot/openwechat/comm/ticker"
 	"go-wxbot/openwechat/comm/web"
 )
 
@@ -34,12 +35,20 @@ func HandleMsg(msg *openwechat.Message) {
 	var (
 		contentText = ""
 		err         error
+		sender      *openwechat.User
 	)
+
+	sender, err = msg.Sender()
+	if err != nil {
+		err = errors.Wrapf(err, "%s获取发送人信息失败", global.Conf.Keys.BotName)
+		msg.ReplyText(err.Error())
+		return
+	}
 
 	if msg.IsText() { // 处理文本消息
 		contentText = trimMsgContent(msg.Content)
 		if contentText != "打赏" && contentText != "圣诞帽" && contentText != "程序员鼓励师" {
-			reply := contextTextBypass(contentText)
+			reply := contextTextBypass(contentText, sender.ID())
 			reply = strings.TrimLeft(reply, "\n")
 			reply = strings.TrimRight(reply, "\n")
 			_, err = msg.ReplyText(reply)
@@ -47,15 +56,14 @@ func HandleMsg(msg *openwechat.Message) {
 				err = errors.Wrapf(err, "reply text msg err,contentText: %s", contentText)
 				logrus.Error(err.Error())
 			}
+			return
 		}
 
-		handleImageReply(msg, contentText)
-
+		handleTextReplyBypass(msg, contentText)
 	}
-
 }
 
-func handleImageReply(msg *openwechat.Message, txt string) {
+func handleTextReplyBypass(msg *openwechat.Message, txt string) {
 	if txt == "打赏" {
 		img, err := os.Open("reword.png")
 		defer img.Close()
@@ -308,7 +316,7 @@ func SaveImageToDisk(saveName, data string) (filename string, err error) {
 	return filename, nil
 }
 
-func contextTextBypass(txt string) (retMsg string) {
+func contextTextBypass(txt, userID string) (retMsg string) {
 	var (
 		err error
 	)
@@ -362,7 +370,27 @@ func contextTextBypass(txt string) (retMsg string) {
 		return retMsg
 	}
 
+	// 事件提醒
+	if txt == "事件提醒" {
+		return `
+格式0：+s15:32,消息内容
+格式0说明：今天 15:32 提醒我「消息内容」
+
+格式1：+s15:32,消息内容,3,60
+格式1说明：今天 15:32 提醒我「消息内容」,提醒 3 次每次间隔 60s
+
+格式2: +st20221227 15:35,消息内容
+格式2说明：20221227 日 15:35 提醒我「消息内容」。注意此格式的日期和时间中间的空格不能丢
+
+格式3: +st20221227 15:35,消息内容,3,60
+格式3说明：20221227 日 15:35 提醒我「消息内容」,提醒 3 次每次间隔 60s。注意此格式的日期和时间中间的空格不能丢
+`
+	}
+
 	// todo 其他的一些
+	if ticker.IsScheduleNotice(txt) {
+		return ticker.AddScheduleNotice(txt, userID)
+	}
 
 	return ""
 }
