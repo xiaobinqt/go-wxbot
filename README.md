@@ -1,10 +1,12 @@
-# golang 微信机器人
+# Go 微信机器人
+
+⚠️本项目只是作者的一个玩具，大部分功能只为个人定制，并不通用。
 
 ## 功能演示
 
 [//]: # ([查看 gif 演示]&#40;https://cdn.xiaobinqt.cn/%E6%BC%94%E7%A4%BA.gif&#41;)
 
-![功能演示](https://cdn.xiaobinqt.cn/xiaobinqt.io/20221127/1983a0aa9ba8475fa007d37e2da43b2e.jpg?imageView2/0/q/75|watermark/2/text/eGlhb2JpbnF0/font/dmlqYXlh/fontsize/1000/fill/IzVDNUI1Qg==/dissolve/52/gravity/SouthEast/dx/15/dy/15 '功能演示')
+![功能演示](https://cdn.xiaobinqt.cn/xiaobinqt.io/20230103/f5978e2b41cb46fd856bb988bc78cfee.jpg?imageView2/0/q/75|watermark/2/text/eGlhb2JpbnF0/font/dmlqYXlh/fontsize/1000/fill/IzVDNUI1Qg==/dissolve/52/gravity/SouthEast/dx/15/dy/15 '功能演示')
 
 ## 部署说明
 
@@ -22,13 +24,19 @@ nohup ./wxbot > core.log & # 后台运行, 可以查看日志 core.log
 
 `less core.log` 可以查看日志，日志里有二维码，可以扫码登录。
 
-> ⚠️本项目只是作者的一个玩具，大部分功能只为个人定制，并不通用。
-
 ## 功能列表
 
 ### 定时给女朋友推消息
 
 每天早上 9:30 给女朋友推送一条早安消息，每天晚上 23:00 给女朋友推送一条晚安消息。好吧，我要被女朋友锤了:cry:。
+
+### 自定义事件提醒
+
+生活中的很多事情都是通过微信提醒的，比如快递消息等。这个自定义事件消息，可以通过固定规则，让机器人定时给我们发消息提醒我们某事。
+
+比如`+s15:32,消息内容,3,60`就会定时「今天 15:31 提醒我「消息内容」,提醒 3 次每次间隔 60s」
+
+又如`+st20221227 15:35,,消息内容,3,60`会定时「20221227日 15:35 提醒我「消息内容」,提醒 3 次每次间隔 60s」。具体可以参看功能演示部分。
 
 ### 定时给群推送消息
 
