@@ -2,6 +2,8 @@ package ticker
 
 import (
 	"fmt"
+	"strconv"
+	"strings"
 	"time"
 
 	"github.com/eatmoreapple/openwechat"
@@ -82,15 +84,25 @@ func BubeiGroupTicker() {
 		return
 	}
 
-	endDate := startDate.AddDate(0, 0, 14)
-	fmt.Println("BubeiGroupTicker false or true", time.Now().After(startDate), time.Now().Before(endDate))
+	cfArr := strings.Split(global.Conf.Keys.BubeiGroup, ",")
+	bubeiGroupName := cfArr[0]
+	days := 14
+	if len(cfArr) > 1 {
+		days, _ = strconv.Atoi(cfArr[1])
+	}
+	if days == 0 {
+		days = 14
+	}
+	endDate := startDate.AddDate(0, 0, days)
+	logrus.Debugf("BubeiGroupTicker false or true，after:[%t]，before:[%t]，days:[%d]，bubeiGroupName:[%s]",
+		time.Now().After(startDate), time.Now().Before(endDate), days, bubeiGroupName)
 
 	for {
 		select {
 		case t := <-time.After(1 * time.Minute):
 			if time.Now().After(startDate) && time.Now().Before(endDate) {
 				nowTime := t.Format("15:04")
-				if nowTime == "22:50" {
+				if nowTime == "22:30" {
 					// 获取群列表
 					groups, err := global.WxSelf.Groups(true)
 					if err != nil {
@@ -100,8 +112,8 @@ func BubeiGroupTicker() {
 					}
 					// 搜索群
 					for _, group := range groups {
-						if group.NickName == global.Conf.Keys.BubeiGroup {
-							group.SendText("22:50 了，没打卡的小伙伴，赶紧去打卡吧！")
+						if group.NickName == bubeiGroupName {
+							group.SendText("22:30 了，没打卡的小伙伴，赶紧去打卡吧！")
 						}
 					}
 				}

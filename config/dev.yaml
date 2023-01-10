@@ -13,7 +13,7 @@ keys:
   master_account: xxx
   houchangcun_fans: 后厂村吴彦祖粉丝团 # 粉丝群
   banzhuan_group: xxx  # 老翔头搬砖群
-  bubei_group: 不背打卡小分队 # 不背单词打卡群
+  bubei_group: 不背打卡小分队,14 # 不背单词打卡群
   bubei_start_date: 2100-07-15 # 不背单词打卡开始日期,一个周期是 14 天
   wu_zhuang_shi_members: xxx,xxx
   remind_msg: xxxx

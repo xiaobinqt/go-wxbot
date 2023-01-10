@@ -59,6 +59,7 @@ func parseNoticeMessage(tf string) (count, interval int, startTimestamp int64, m
 	}
 
 	tf = strings.ReplaceAll(tf, "，", ",")
+	tf = strings.ReplaceAll(tf, "：", ":")
 	tfArr := strings.Split(tf, ",")
 	if len(tfArr) < 2 { // 格式不正确
 		return 0, 0, 0, "", fmt.Errorf("格式错误，可以输入「事件提醒」关键字获取帮助.")
