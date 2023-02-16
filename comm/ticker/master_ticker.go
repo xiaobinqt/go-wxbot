@@ -18,6 +18,9 @@ func MasterTicker() {
 		case t := <-time.After(1 * time.Minute):
 			nowTime := t.Format("15:04")
 
+			yasiEnd, _ := time.ParseInLocation("2006-01-02", "2023-10-07", time.Local)
+			yasiRemaindays := int(yasiEnd.Sub(t).Hours() / 24)
+
 			if nowTime == "10:00" {
 				lz, err := tian.GetMessageV1(tian.C_lizhiguyan)
 				message := ""
@@ -34,6 +37,10 @@ func MasterTicker() {
 					err = errors.Wrapf(err, "SendMessageToMasterAccout err")
 					logrus.Error(err.Error())
 				}
+
+				_ = global.WxFriends.
+					SearchByRemarkName(1, global.Conf.Keys.MasterAccount).
+					SendText(fmt.Sprintf(`离雅思过期时间还有 %d 天，兄弟，留给你的时间不多了！`, yasiRemaindays))
 			}
 
 			if nowTime == "22:00" {
@@ -56,6 +63,10 @@ func MasterTicker() {
 					err = errors.Wrapf(err, "SendMessageToMasterAccout err")
 					logrus.Error(err.Error())
 				}
+
+				_ = global.WxFriends.
+					SearchByRemarkName(1, global.Conf.Keys.MasterAccount).
+					SendText(fmt.Sprintf(`离雅思过期时间还有 %d 天，兄弟，留给你的时间不多了！`, yasiRemaindays))
 			}
 
 			if nowTime == "23:30" {
