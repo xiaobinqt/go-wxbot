@@ -6,7 +6,7 @@
 
 [//]: # ([查看 gif 演示]&#40;https://cdn.xiaobinqt.cn/%E6%BC%94%E7%A4%BA.gif&#41;)
 
-![功能演示](demonstration.jpg '功能演示')
+<div align="center"><a href="https://cdn.xiaobinqt.cn/xiaobinqt.io/20230103/f5978e2b41cb46fd856bb988bc78cfee.jpg?imageView2/0/q/75|watermark/2/text/eGlhb2JpbnF0/font/dmlqYXlh/fontsize/1000/fill/IzVDNUI1Qg==/dissolve/52/gravity/SouthEast/dx/15/dy/15" target="_blank"><img src="https://cdn.xiaobinqt.cn/xiaobinqt.io/20230103/f5978e2b41cb46fd856bb988bc78cfee.jpg?imageView2/0/q/75|watermark/2/text/eGlhb2JpbnF0/font/dmlqYXlh/fontsize/1000/fill/IzVDNUI1Qg==/dissolve/52/gravity/SouthEast/dx/15/dy/15" width=  /></a></div>
 
 ## 部署说明
 
