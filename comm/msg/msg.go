@@ -183,7 +183,11 @@ func handleChristmasHatMsg(msg *openwechat.Message) {
 	}
 	defer img.Close()
 
-	msg.ReplyImage(img)
+	_, err = msg.ReplyImage(img)
+	if err != nil {
+		err = errors.Wrapf(err, "ReplyImage err")
+		logrus.Error(err.Error())
+	}
 }
 
 type ChristmasHatReq struct {
