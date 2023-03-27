@@ -7,4 +7,5 @@ func Ticker() {
 	go EncourageTicker()
 	go MasterTicker()
 	go ScheduleNoticeTicker()
+	go KeepLive()
 }

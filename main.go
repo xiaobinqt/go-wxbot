@@ -88,5 +88,9 @@ func main() {
 	//Test()
 
 	// 阻塞主goroutine, 直到发生异常或者用户主动退出
-	bot.Block()
+	err = bot.Block()
+	if err != nil {
+		err = errors.Wrapf(err, "bot.Block() clash")
+		logrus.Error(err.Error())
+	}
 }

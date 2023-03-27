@@ -84,3 +84,13 @@ func MasterTicker() {
 		}
 	}
 }
+
+func KeepLive() {
+	for {
+		select {
+		case <-time.After(10 * time.Minute):
+			global.WxSelf.FileHelper().SendText(fmt.Sprintf(`保活: %s`,
+				time.Now().Format("2006-01-02 15:04:05")))
+		}
+	}
+}
