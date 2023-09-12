@@ -4,7 +4,7 @@ go 1.16
 
 require (
 	github.com/Lofanmi/chinese-calendar-golang v0.0.0-20211214151323-ef5cb443e55e
-	github.com/eatmoreapple/openwechat v1.4.2-0.20230321053318-1c102bdea8d7
+	github.com/eatmoreapple/openwechat v1.4.5-0.20230911013309-68d6f5444502
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/json-iterator/go v1.1.12
 	github.com/pkg/errors v0.9.1
